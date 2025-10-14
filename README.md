@@ -1,6 +1,9 @@
 # Portfolio
+
 This is my personal portfolio website 
+
 I've created it using  react,vite,tailwind,framer
+
 #This is the structure of portfolio 
 portfolio/
 ├─ public/
@@ -18,4 +21,5 @@ portfolio/
 ├─ tailwind.config.cjs
 ├─ postcss.config.cjs
 └─ README.md
+
 If you have any doubts contact me through thiyaanesv@gmail.com
