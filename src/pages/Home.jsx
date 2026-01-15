@@ -39,7 +39,7 @@ export default function Home(){
 
 function Typing(){
   const [text, setText] = React.useState('')
-  const full = 'Hii Developers!'
+  const full = 'Hi Developers!'
   React.useEffect(()=>{
     let i=0; setText('')
     const t = setInterval(()=>{

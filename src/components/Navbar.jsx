@@ -15,7 +15,7 @@ export default function Navbar(){
   return (
     <header className="w-full sticky top-0 z-50 bg-transparent">
       <div className="container flex items-center justify-between py-4">
-        <motion.div initial={{opacity:0}} animate={{opacity:1}} className="text-xl font-bold text-white">Thiyaanes V</motion.div>
+        <motion.div initial={{opacity:0}} animate={{opacity:1}} className="text-xl font-bold text-white">Thiyaanes Venkatachalam</motion.div>
 
         <nav>
           <ul className="hidden md:flex items-center gap-6">
