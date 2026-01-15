@@ -4,7 +4,7 @@ export default function Skills(){
     {name:'Python', logo:'/assets/logos/python.png'},
     {name:'C++', logo:'/assets/logos/cpp.png'},
     {name:'HTML', logo:'/assets/logos/html.png'},
-    {name:'CSS', logo:'/assets/logos/css.png'},
+    {name:'Java', logo:'/assets/logos/java.png'},
     {name:'SQL', logo:'/assets/logos/sql.png'},
     {name:'Flask', logo:'/assets/logos/flask.png'},
     {name:'Figma', logo:'/assets/logos/figma.png'},
@@ -17,8 +17,9 @@ export default function Skills(){
     {name:'Vercel', logo:'/assets/logos/vercel.png'},
   ]
   return (
-    <section className="container py-20">
-      <h2 className="text-2xl font-bold">Professional Skillset</h2>
+    <section className="container py-20 relative">
+      <div className="relative z-10">
+      <h2 className="text-2xl font-bold text-white">Professional Skillset</h2>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
         {skills.map(s=> (
           <div key={s.name} className="skill-card flex items-center gap-3 p-4">
@@ -28,7 +29,7 @@ export default function Skills(){
         ))}
       </div>
 
-      <h3 className="mt-10 text-xl font-semibold">Tools I Use</h3>
+      <h3 className="mt-10 text-xl font-semibold text-white">Tools I Use</h3>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
         {tools.map(t=> (
           <div key={t.name} className="skill-card flex items-center gap-3 p-4">
@@ -36,6 +37,7 @@ export default function Skills(){
             <div className="font-semibold">{t.name}</div>
           </div>
         ))}
+      </div>
       </div>
     </section>
   )

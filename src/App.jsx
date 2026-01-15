@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -10,13 +10,26 @@ import Achievements from './pages/Achievements'
 import Contact from './pages/Contact'
 
 export default function App() {
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePos({ x: e.clientX, y: e.clientY })
+    }
+
+    window.addEventListener('mousemove', handleMouseMove)
+    return () => window.removeEventListener('mousemove', handleMouseMove)
+  }, [])
+
   return (
     <div className="relative min-h-screen flex flex-col">
-      {/* ✨ Animated Background Shapes */}
-      <div className="absolute inset-0 overflow-hidden -z-10">
-        <div className="animate-pulse bg-blue-400/20 w-72 h-72 rounded-full absolute top-10 left-20 blur-3xl"></div>
-        <div className="animate-ping bg-pink-500/20 w-64 h-64 rounded-full absolute bottom-20 right-20 blur-3xl"></div>
-      </div>
+      {/* ✨ Hover Light Effect */}
+      <div 
+        className="hover-light"
+        style={{
+          background: `radial-gradient(600px 400px at ${mousePos.x}px ${mousePos.y}px, rgba(228, 222, 243, 0.15), transparent 100%)`
+        }}
+      />
 
       {/* 🧭 Navbar */}
       <Navbar />

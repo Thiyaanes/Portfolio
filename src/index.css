@@ -15,10 +15,27 @@ html, body, #root {
   color: white;
   overflow-x: hidden;
   position: relative;
-  background: radial-gradient(circle at top left, #0f2027, #203a43, #2c5364);
+  background-image: url('/assets/bg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
 
-/* Floating gradient blobs */
+/* Soft, natural hover light (NOT a hard circle) */
+.hover-light {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    600px 400px at center,
+    rgba(228, 222, 243, 0.15),
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+  transition: background-position 0.35s ease;
+}
+
+/* Floating gradient blobs - kept for compatibility */
 body::before,
 body::after {
   content: "";
@@ -27,19 +44,19 @@ body::after {
   height: 400px;
   border-radius: 50%;
   filter: blur(150px);
-  opacity: 0.4;
+  opacity: 0;
   z-index: -1;
   animation: move 10s ease-in-out infinite alternate;
 }
 
 body::before {
-  background: #000259; /* dark blob */
+  background: transparent;
   top: 10%;
   left: 10%;
 }
 
 body::after {
-  background: #460155; /* violet blob */
+  background: transparent;
   bottom: 10%;
   right: 10%;
 }
