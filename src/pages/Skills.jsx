@@ -2,9 +2,9 @@ import React from 'react'
 export default function Skills(){
   const skills = [
     {name:'Python', logo:'/assets/logos/python.png'},
-    {name:'C++', logo:'/assets/logos/cpp.png'},
-    {name:'HTML', logo:'/assets/logos/html.png'},
     {name:'Java', logo:'/assets/logos/java.png'},
+    {name:'HTML', logo:'/assets/logos/html.png'},
+    {name:'Css', logo:'/assets/logos/css.png'},
     {name:'SQL', logo:'/assets/logos/sql.png'},
     {name:'Flask', logo:'/assets/logos/flask.png'},
     {name:'Figma', logo:'/assets/logos/figma.png'},
