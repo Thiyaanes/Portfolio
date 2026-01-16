@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 export default function Home(){
   return (
@@ -16,8 +17,8 @@ export default function Home(){
           </ul>
 
           <div className="mt-6 flex gap-3">
-            <a href="/projects" className="px-5 py-3 rounded-md bg-gradient-to-r from-sky-400 to-violet-400 text-slate-900 font-semibold">View projects</a>
-            <a href="/about" className="px-5 py-3 rounded-md border border-white/10">About me</a>
+            <Link to="/projects" className="px-5 py-3 rounded-md bg-gradient-to-r from-sky-400 to-violet-400 text-slate-900 font-semibold">View projects</Link>
+            <Link to="/about" className="px-5 py-3 rounded-md border border-white/10">About me</Link>
           </div>
         </motion.div>
 

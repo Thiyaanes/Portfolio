@@ -25,7 +25,7 @@ export default function Navbar(){
               </li>
             ))}
             <li>
-              <a className="ml-4 inline-block px-4 py-2 rounded-lg bg-gradient-to-r from-sky-400 to-violet-400 text-slate-900 font-semibold" href="/assets/THIYAANES_resume.pdf" download>Resume</a>
+              <a className="ml-4 inline-block px-4 py-2 rounded-lg bg-gradient-to-r from-sky-400 to-violet-400 text-slate-900 font-semibold" href="/Portfolio/assets/THIYAANES_resume.pdf" download>Resume</a>
             </li>
           </ul>
 
@@ -47,7 +47,7 @@ function MobileMenu(){
       {open && (
         <motion.div initial={{opacity:0, y:-8}} animate={{opacity:1, y:0}} className="absolute right-0 mt-2 bg-white/5 backdrop-blur-md rounded-lg p-4 w-48">
           {links.map(l=> <div key={l.to} className="py-1"><NavLink to={l.to} onClick={()=>setOpen(false)}>{l.label}</NavLink></div>)}
-          <div className="mt-2"><a href="/assets/THIYAANES_resume.pdf" download className="block px-3 py-2 bg-gradient-to-r from-sky-400 to-violet-400 rounded text-slate-900">Resume</a></div>
+          <div className="mt-2"><a href="/Portfolio/assets/THIYAANES_resume.pdf" download className="block px-3 py-2 bg-gradient-to-r from-sky-400 to-violet-400 rounded text-slate-900">Resume</a></div>
         </motion.div>
       )}
     </div>

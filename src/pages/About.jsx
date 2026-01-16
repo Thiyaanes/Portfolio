@@ -12,7 +12,7 @@ export default function About(){
           <li>• Cyber Security</li>
         </ul>
         <div className="mt-6">
-          <a className="px-4 py-2 bg-gradient-to-r from-sky-400 to-violet-400 text-slate-900 rounded font-semibold" href="/assets/THIYAANES_resume.pdf" download>Download Resume</a>
+          <a className="px-4 py-2 bg-gradient-to-r from-sky-400 to-violet-400 text-slate-900 rounded font-semibold" href="/Portfolio/assets/THIYAANES_resume.pdf" download>Download Resume</a>
         </div>
       </div>
     </section>

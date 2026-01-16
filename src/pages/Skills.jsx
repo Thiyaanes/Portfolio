@@ -1,20 +1,20 @@
 import React from 'react'
 export default function Skills(){
   const skills = [
-    {name:'Python', logo:'/assets/logos/python.png'},
-    {name:'Java', logo:'/assets/logos/java.png'},
-    {name:'HTML', logo:'/assets/logos/html.png'},
-    {name:'Css', logo:'/assets/logos/css.png'},
-    {name:'SQL', logo:'/assets/logos/sql.png'},
-    {name:'Flask', logo:'/assets/logos/flask.png'},
-    {name:'Figma', logo:'/assets/logos/figma.png'},
-    {name:'Git', logo:'/assets/logos/git.png'},
+    {name:'Python', logo:'/Portfolio/assets/logos/python.png'},
+    {name:'Java', logo:'/Portfolio/assets/logos/java.png'},
+    {name:'HTML', logo:'/Portfolio/assets/logos/html.png'},
+    {name:'Css', logo:'/Portfolio/assets/logos/css.png'},
+    {name:'SQL', logo:'/Portfolio/assets/logos/sql.png'},
+    {name:'Flask', logo:'/Portfolio/assets/logos/flask.png'},
+    {name:'Figma', logo:'/Portfolio/assets/logos/figma.png'},
+    {name:'Git', logo:'/Portfolio/assets/logos/git.png'},
   ]
   const tools = [
-    {name:'VSCode', logo:'/assets/logos/vscode.png'},
-    {name:'Windows', logo:'/assets/logos/windows.png'},
-    {name:'GitHub', logo:'/assets/logos/github.png'},
-    {name:'Vercel', logo:'/assets/logos/vercel.png'},
+    {name:'VSCode', logo:'/Portfolio/assets/logos/vscode.png'},
+    {name:'Windows', logo:'/Portfolio/assets/logos/windows.png'},
+    {name:'GitHub', logo:'/Portfolio/assets/logos/github.png'},
+    {name:'Vercel', logo:'/Portfolio/assets/logos/vercel.png'},
   ]
   return (
     <section className="container py-20 relative">
