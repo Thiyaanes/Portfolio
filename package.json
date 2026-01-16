@@ -2,10 +2,13 @@
   "name": "thiyaanes-portfolio",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://thiyaanes.github.io/Portfolio",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "framer-motion": "^10.18.0",
@@ -15,10 +18,11 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.4",
-    "vite": "^5.4.0",
     "autoprefixer": "^10.4.14",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.4.24",
-    "tailwindcss": "^3.4.7"
+    "tailwindcss": "^3.4.7",
+    "vite": "^5.4.0"
   },
   "engines": {
     "node": "18.x"
