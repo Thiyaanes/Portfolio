@@ -9,10 +9,10 @@ export default function Achievements(){
   return (
     <section className="container py-20">
       <h2 className="text-2xl font-bold">Achievements</h2>
-      <div className="mt-6 flex gap-4 overflow-x-auto py-2">
+      <div className="mt-6 grid md:grid-cols-2 gap-6">
         {items.map(i=> (
-          <div key={i.title} className="achievement-card">
-            <h3 className="font-semibold">{i.title}</h3>
+          <div key={i.title} className="achievement-card glass p-6 border border-white/20">
+            <h3 className="font-semibold text-lg text-sky-300">{i.title}</h3>
             <p className="mt-2 text-slate-300">{i.desc}</p>
           </div>
         ))}

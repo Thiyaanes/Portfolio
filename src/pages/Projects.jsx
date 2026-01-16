@@ -7,12 +7,12 @@ export default function Projects(){
       <h2 className="text-2xl font-bold">Projects</h2>
       <div className="grid md:grid-cols-3 gap-6 mt-6">
         {projects.map(p=> (
-          <div key={p.title} className="project-card">
-            <img src={p.img} alt={p.title} />
-            <div className="p-4">
-              <h3 className="font-semibold text-lg">{p.title}</h3>
+          <div key={p.title} className="project-card glass p-6 border border-white/20">
+            <img src={p.img} alt={p.title} className="w-full h-40 object-cover rounded-lg" />
+            <div className="mt-4">
+              <h3 className="font-semibold text-lg text-sky-300">{p.title}</h3>
               <p className="text-slate-300 mt-2">{p.desc}</p>
-              <a className="inline-block mt-3 text-sky-300 font-semibold" href={p.link} target="_blank" rel="noreferrer">View on GitHub</a>
+              <a className="inline-block mt-3 text-sky-300 font-semibold hover:underline" href={p.link} target="_blank" rel="noreferrer">View on GitHub</a>
             </div>
           </div>
         ))}

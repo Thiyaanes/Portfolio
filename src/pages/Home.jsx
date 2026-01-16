@@ -40,14 +40,25 @@ export default function Home(){
 function Typing(){
   const [text, setText] = React.useState('')
   const full = 'Hi Developers!'
+  
   React.useEffect(()=>{
-    let i=0; setText('')
+    let i = 0
+    setText('')
+    
     const t = setInterval(()=>{
-      setText(prev=> prev + full.charAt(i)); 
-      i++; 
-      if(i>=full.length) clearInterval(t)
-    }, 80)
+      if(i <= full.length) {
+        setText(full.slice(0, i))
+        i++
+      } else {
+        clearInterval(t)
+      }
+    }, 100)
     return ()=> clearInterval(t)
   },[])
-  return <span className="bg-clip-text text-transparent bg-gradient-to-r from-sky-300 to-violet-300">{text}<span className="opacity-80">▌</span></span>
+  
+  return (
+    <span className="bg-clip-text text-transparent bg-gradient-to-r from-sky-300 via-purple-300 to-violet-300 font-extrabold animate-pulse">
+      {text}
+    </span>
+  )
 }

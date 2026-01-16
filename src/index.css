@@ -15,10 +15,33 @@ html, body, #root {
   color: white;
   overflow-x: hidden;
   position: relative;
-  background-image: url('/assets/bg.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
+}
+
+#root {
+  position: relative;
+  z-index: 2;
+}
+
+/* Background with enhanced color */
+body::before {
+  position: fixed;
+  inset: 0;
+  background: url('/assets/bg.jpg') center / cover no-repeat;
+  filter: brightness(0.90) saturate(2.15);
+  z-index: 0;
+  content: "";
+}
+
+/* Dark overlay */
+body::after {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.75)
+  );
+  z-index: 1;
+  content: "";
 }
 
 /* Soft, natural hover light (NOT a hard circle) */
@@ -33,37 +56,6 @@ html, body, #root {
   pointer-events: none;
   z-index: 2;
   transition: background-position 0.35s ease;
-}
-
-/* Floating gradient blobs - kept for compatibility */
-body::before,
-body::after {
-  content: "";
-  position: fixed;
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  filter: blur(150px);
-  opacity: 0;
-  z-index: -1;
-  animation: move 10s ease-in-out infinite alternate;
-}
-
-body::before {
-  background: transparent;
-  top: 10%;
-  left: 10%;
-}
-
-body::after {
-  background: transparent;
-  bottom: 10%;
-  right: 10%;
-}
-
-@keyframes move {
-  0% { transform: translateY(0px) scale(1); }
-  100% { transform: translateY(-50px) scale(1.2); }
 }
 
 /* Glass card style */
@@ -82,7 +74,7 @@ body::after {
 }
 
 .section-title {
-  color: theme(colors.primary);
+  color: #60a5fa;
   font-weight: 700;
 }
 
@@ -113,4 +105,141 @@ body::after {
 .project-card:hover, .achievement-card:hover, .skill-card:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Smooth page transitions */
+* {
+  transition: background-color 0.3s ease;
+}
+
+/* Enhanced button styles */
+button, a[class*="bg-gradient"] {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+button::before, a[class*="bg-gradient"]::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+button:hover::before, a[class*="bg-gradient"]:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Glow effect for links and important elements */
+a {
+  position: relative;
+}
+
+a:hover {
+  text-shadow: 0 0 8px rgba(148, 163, 247, 0.6);
+}
+
+/* Smooth text animations */
+.section-title {
+  animation: gradientShift 6s ease infinite;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa, #60a5fa);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Staggered animation for list items */
+li {
+  animation: slideIn 0.6s ease forwards;
+  opacity: 0;
+}
+
+li:nth-child(1) { animation-delay: 0.1s; }
+li:nth-child(2) { animation-delay: 0.2s; }
+li:nth-child(3) { animation-delay: 0.3s; }
+li:nth-child(4) { animation-delay: 0.4s; }
+li:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Hover glow for glass cards */
+.glass {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass:hover {
+  border-color: rgba(96, 165, 250, 0.3);
+  box-shadow: 0 0 20px rgba(96, 165, 250, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Smooth scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #60a5fa, #a78bfa);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #a78bfa, #60a5fa);
+}
+
+/* Floating animation for decorative elements */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Text gradient effect */
+.text-gradient {
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Shimmer effect for highlights */
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.shimmer {
+  animation: shimmer 3s infinite;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
+  background-size: 1000px 100%;
 }
